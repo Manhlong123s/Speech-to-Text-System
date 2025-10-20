@@ -1,0 +1,4 @@
+import locale
+import whisper
+locale.getpreferredencoding = lambda : "UTF-8"
+model = whisper.load_model("base",device="cuda")
