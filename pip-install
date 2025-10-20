@@ -1,0 +1,3 @@
+!pip install -q openai-whisper ffmpeg pydub
+!pip install -q transformers pydub
+!pip install ffmpeg-python
