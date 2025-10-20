@@ -1,0 +1,16 @@
+import ffmpeg
+from google.colab import files
+uploaded = files.upload()  # Chọn video từ máy tính
+file_name = list(uploaded.keys())[0]
+print("Đã tải lên:", file_name)
+
+audio_output = "output_audio.mp3"
+
+(
+    ffmpeg
+    .input(file_name)
+    .output(audio_output, format='mp3', ac=2, ar='44100')
+    .run(overwrite_output=True)
+)
+
+print("Đã tách âm thanh thành:", audio_output)
